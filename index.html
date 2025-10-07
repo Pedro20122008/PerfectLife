@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Life</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Perfect Life</h1>
+
+        <!-- Menu inicial -->
+        <div id="menu">
+            <label>Nome: 
+                <input type="text" id="nome" placeholder="Digite seu nome">
+            </label>
+            
+            <label>Classe Social:
+                <select id="classe">
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+                </select>
+            </label>
+            
+            <label>País de origem:
+                <select id="pais">
+                    <option value="🇿🇦">África do Sul</option>
+                    <option value="🇦🇱">Albânia</option>
+                    <option value="🇩🇪">Alemanha</option>
+                    <option value="🇦🇴">Angola</option>
+                    <option value="🇦🇬">Antígua e Barbuda</option>
+                    <option value="🇸🇦">Arábia Saudita</option>
+                    <option value="🇩🇿">Argélia</option>
+                    <option value="🇦🇷">Argentina</option>
+                    <option value="🇦🇲">Armênia</option>
+                    <option value="🇦🇺">Austrália</option>
+                    <option value="🇦🇹">Áustria</option>
+                    <option value="🇦🇿">Azerbaijão</option>
+                    <option value="🇧🇸">Bahamas</option>
+                    <option value="🇧🇩">Bangladesh</option>
+                    <option value="🇧🇧">Barbados</option>
+                    <option value="🇧🇭">Bahrein</option>
+                    <option value="🇧🇪">Bélgica</option>
+                    <option value="🇧🇿">Belize</option>
+                    <option value="🇧🇯">Benim</option>
+                    <option value="🇧🇾">Bielorrússia</option>
+                    <option value="🇧🇴">Bolívia</option>
+                    <option value="🇧🇦">Bósnia e Herzegovina</option>
+                    <option value="🇧🇼">Botsuana</option>
+                    <option value="🇧🇷">Brasil</option>
+                    <option value="🇧🇳">Brunei</option>
+                    <option value="🇧🇬">Bulgária</option>
+                    <option value="🇧🇫">Burquina Faso</option>
+                    <option value="🇧🇮">Burundi</option>
+                    <option value="🇰🇭">Camboja</option>
+                    <option value="🇨🇲">Camarões</option>
+                    <option value="🇨🇻">Cabo Verde</option>
+                    <option value="🇨🇦">Canadá</option>
+                    <option value="🇶🇦">Catar</option>
+                    <option value="🇰🇿">Cazaquistão</option>
+                    <option value="🇨🇱">Chile</option>
+                    <option value="🇨🇳">China</option>
+                    <option value="🇨🇾">Chipre</option>
+                    <option value="🇨🇴">Colômbia</option>
+                    <option value="🇰🇷">Coreia do Sul</option>
+                    <option value="🇰🇵">Coreia do Norte</option>
+                    <option value="🇨🇷">Costa Rica</option>
+                    <option value="🇭🇷">Croácia</option>
+                    <option value="🇨🇺">Cuba</option>
+                    <option value="🇩🇰">Dinamarca</option>
+                    <option value="🇪🇬">Egito</option>
+                    <option value="🇸🇻">El Salvador</option>
+                    <option value="🇦🇪">Emirados Árabes Unidos</option>
+                    <option value="🇸🇰">Eslováquia</option>
+                    <option value="🇸🇮">Eslovênia</option>
+                    <option value="🇪🇸">Espanha</option>
+                    <option value="🇺🇸">Estados Unidos</option>
+                    <option value="🇪🇪">Estônia</option>
+                    <option value="🇪🇹">Etiópia</option>
+                    <option value="🇫🇯">Fiji</option>
+                    <option value="🇵🇭">Filipinas</option>
+                    <option value="🇫🇮">Finlândia</option>
+                    <option value="🇫🇷">França</option>
+                    <option value="🇬🇦">Gabão</option>
+                    <option value="🇬🇲">Gâmbia</option>
+                    <option value="🇬🇭">Gana</option>
+                    <option value="🇬🇷">Grécia</option>
+                    <option value="🇬🇹">Guatemala</option>
+                    <option value="🇬🇾">Guiana</option>
+                    <option value="🇭🇳">Honduras</option>
+                    <option value="🇭🇺">Hungria</option>
+                    <option value="🇮🇪">Irlanda</option>
+                    <option value="🇮🇸">Islândia</option>
+                    <option value="🇮🇱">Israel</option>
+                    <option value="🇮🇹">Itália</option>
+                    <option value="🇯🇲">Jamaica</option>
+                    <option value="🇯🇵">Japão</option>
+                    <option value="🇯🇴">Jordânia</option>
+                    <option value="🇰🇪">Quênia</option>
+                    <option value="🇱🇦">Laos</option>
+                    <option value="🇱🇧">Líbano</option>
+                    <option value="🇱🇹">Lituânia</option>
+                    <option value="🇱🇺">Luxemburgo</option>
+                    <option value="🇲🇬">Madagáscar</option>
+                    <option value="🇲🇼">Malawi</option>
+                    <option value="🇲🇾">Malásia</option>
+                    <option value="🇲🇱">Mali</option>
+                    <option value="🇲🇹">Malta</option>
+                    <option value="🇲🇦">Marrocos</option>
+                    <option value="🇲🇷">Mauritânia</option>
+                    <option value="🇲🇺">Maurício</option>
+                    <option value="🇲🇽">México</option>
+                    <option value="🇲🇿">Moçambique</option>
+                    <option value="🇲🇨">Mônaco</option>
+                    <option value="🇳🇦">Namíbia</option>
+                    <option value="🇳🇵">Nepal</option>
+                    <option value="🇳🇮">Nicarágua</option>
+                    <option value="🇳🇪">Níger</option>
+                    <option value="🇳🇬">Nigéria</option>
+                    <option value="🇳🇴">Noruega</option>
+                    <option value="🇳🇿">Nova Zelândia</option>
+                    <option value="🇴🇲">Omã</option>
+                    <option value="🇵🇰">Paquistão</option>
+                    <option value="🇵🇦">Panamá</option>
+                    <option value="🇵🇾">Paraguai</option>
+                    <option value="🇵🇪">Peru</option>
+                    <option value="🇵🇱">Polônia</option>
+                    <option value="🇵🇹">Portugal</option>
+                    <option value="🇩🇴">República Dominicana</option> 
+                    <option value="🇷🇴">Romênia</option>
+                    <option value="🇷🇺">Rússia</option>
+                    <option value="🇸🇳">Senegal</option>
+                    <option value="🇷🇸">Sérvia</option>
+                    <option value="🇸🇬">Singapura</option>
+                    <option value="🇸🇴">Somália</option>
+                    <option value="🇸🇷">Suriname</option>
+                    <option value="🇸🇩">Sudão</option>
+                    <option value="🇸🇸">Sudão do Sul</option>
+                    <option value="🇸🇪">Suécia</option>
+                    <option value="🇨🇭">Suíça</option>
+                    <option value="🇹🇭">Tailândia</option>
+                    <option value="🇹🇿">Tanzânia</option>
+                    <option value="🇹🇬">Togo</option>
+                    <option value="🇹🇴">Tonga</option>
+                    <option value="🇹🇹">Trinidad e Tobago</option>
+                    <option value="🇹🇷">Turquia</option>
+                    <option value="🇺🇦">Ucrânia</option>
+                    <option value="🇺🇬">Uganda</option>
+                    <option value="🇺🇾">Uruguai</option>
+                    <option value="🇻🇪">Venezuela</option>
+                    <option value="🇻🇳">Vietnã</option>
+                    <option value="🇿🇲">Zâmbia</option>
+                    <option value="🇿🇼">Zimbábue</option>
+
+
+                </select>
+            </label>
+            
+            <button onclick="novaVida()">Nova Vida</button>
+        </div>
+
+        <!-- Jogo -->
+        <div id="jogo" class="hidden">
+            <h2 id="status"></h2> 
+     
+            
+            <div id="dinheiro-display">
+                <p id="aparecer"></p>
+            </div>
+
+            <p id="estatisticas"></p>
+
+            <div>
+                <div class="sts_bar">
+                    <p>Saúde</p>
+                    <div class="barra saude"><span id="barra-saude"></span></div>
+                </div>
+                <div class="sts_bar">
+                    <p>Felicidade</p>
+                    <div class="barra felicidade"><span id="barra-felicidade"></span></div>
+                </div>
+                <div class="sts_bar">
+                    <p>Saúde Mental</p>
+                    <div class="barra saude-mental"><span id="barra-saude-mental"></span></div>
+                </div>
+            </div>
+
+            <div id="opcoes">
+                <button onclick="passarAno()">Passar 1 ano</button>
+                <button onclick="carreira()">Carreira</button>
+                <button onclick="atividades()">Atividades</button>
+                <button onclick="abrirExtras()">Abrir Vida Social e Relacionamentos</button>
+
+            </div>
+        </div>
+        <div id="relacoes" class="hidden"></div>
+        <div id="carreira" class="hidden"></div>
+        <div id="atividades" class="hidden"></div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

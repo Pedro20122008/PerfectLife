@@ -1,0 +1,194 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0d2b2a, #1b1f2f);
+    color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #1e1e2e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    max-width: 650px;
+    width: 100%;
+    animation: fadeIn 0.8s ease-in-out;
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    color: #f0f0ff;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 12px 0;
+    font-weight: bold;
+    color: #c5cae9;
+}
+
+input, select {
+    padding: 6px 8px;
+    margin-left: 10px;
+    border-radius: 6px;
+    border: 1px solid #4db6ac;
+    background-color: #263238;
+    color: #e0f7fa;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #8e24aa;
+    box-shadow: 0 0 4px rgba(142, 36, 170, 0.6);
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(135deg, #6a1b9a, #00897b);
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #8e24aa, #00bfa5);
+    transform: scale(1.05);
+}
+
+#estatisticas {
+    margin-top: 15px;
+    white-space: pre-line;
+    padding: 15px;
+    border-radius: 10px;
+    background: #263238;
+    border: 1px solid #37474f;
+    color: #f0f0ff;
+}
+
+/* 📊 Barras de status */
+.sts_bar p {
+    margin: 0;
+}
+
+.barra {
+    height: 14px;
+    border-radius: 8px;
+    background: #37474f;
+    margin: 5px 0 12px;
+    overflow: hidden;
+}
+
+.barra span {
+    display: block;
+    height: 100%;
+    transition: width 0.3s ease-in-out;
+}
+
+.saude span {
+    background: #00bfa5;
+}
+
+.saude-mental span {
+    background: #8e24aa;
+}
+
+.felicidade span {
+    background: #7c4dff;
+}
+
+/* Dinheiro no canto superior */
+#dinheiro-display {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #00897b;
+    color: white;
+    padding: 1px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+/* Relacionamentos */
+#relacoes {
+    margin-top: 20px;
+    padding: 15px;
+    background: #1f1f2f;
+    border-radius: 12px;
+    border: 1px solid #4db6ac;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.relacao {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #37474f;
+    background: #263238;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.relacao:hover {
+    transform: scale(1.02);
+}
+
+.relacao p {
+    margin: 0 0 8px;
+    font-weight: bold;
+    color: #e0f7fa;
+}
+
+.relacao button {
+    background: linear-gradient(135deg, #6a1b9a, #00897b);
+    margin-right: 6px;
+    margin-top: 6px;
+    font-size: 14px;
+    color: white;
+}
+
+.relacao button:hover {
+    background: linear-gradient(135deg, #8e24aa, #00bfa5);
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cassino */
+#atividades button {
+    background: linear-gradient(135deg, #6a1b9a, #00796b);
+    margin: 5px 5px 10px 0;
+    font-size: 14px;
+    color: white;
+}
+
+#atividades button:hover {
+    background: linear-gradient(135deg, #8e24aa, #00bfa5);
+    transform: scale(1.05);
+}
