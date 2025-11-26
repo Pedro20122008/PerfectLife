@@ -1,11 +1,28 @@
-body {
+.body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #0d2b2a, #1b1f2f);
     color: #e0f7fa;
     display: flex;
     justify-content: center;
     padding: 20px;
     min-height: 100vh;
+}
+
+.carreirabt{
+    width: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0d2b2a, #1b1f2f);
+    color: #e0f7fa;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+#Save {
+    display: flex;
+    flex-direction: column;
+    float:left;
 }
 
 .container {
@@ -54,7 +71,8 @@ input:focus, select:focus {
 }
 
 button {
-    margin-top: 15px;
+    margin-top: 15px;   
+    margin-right: 10px;
     padding: 10px 20px;
     border: none;
     background: linear-gradient(135deg, #6a1b9a, #00897b);
@@ -63,6 +81,7 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.2s, background 0.3s;
+    
 }
 
 button:hover {
@@ -191,4 +210,11 @@ button:hover {
 #atividades button:hover {
     background: linear-gradient(135deg, #8e24aa, #00bfa5);
     transform: scale(1.05);
+}
+
+#opções button {
+    background: linear-gradient(135deg, #6a1b9a, #00796b);
+    margin: 5px 5px 10px 0;
+    font-size: 14px;
+    color: white;
 }
