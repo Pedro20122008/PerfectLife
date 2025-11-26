@@ -1,9 +1,37 @@
 let jogador;
-let pessoa = ["Joãozinho", "Mariazinha", "Carlinhos", "Aninha", "Pedro", "Sofia", "Lucas", "Isabela", "Gabriel", "Laura", "Matheus", "Manuela", "Rafael", "Alice", "Bruno", "Helena", "Daniel", "Valentina", "Thiago", "Lívia", "Fernando", "Camila", "Gustavo", "Beatriz", "Eduardo", "Juliana", "Marcelo", "Larissa", "Ricardo", "Amanda", "Vitória", "Felipe", "Carolina", "Diego", "Patrícia", "André", "Mônica", "Paulo", "Vanessa"]; 
+let pessoa = ["Joãozinho", "Mariazinha", "Carlinhos", "Aninha", "Pedro", "Sofia", "Lucas", "Isabela", "Gabriel", "Laura", "Matheus", "Manuela", "Rafael", "Alice", "Bruno", "Helena", "Daniel", "Valentina", "Thiago", "Lívia", "Fernando", "Camila", "Gustavo", "Beatriz", "Eduardo", "Juliana", "Marcelo", "Larissa", "Ricardo", "Amanda", "Vitória", "Felipe", "Carolina", "Diego", "Patrícia", "André", "Mônica", "Paulo", "Vanessa"]; // Mais nomes para novas paixões/amigos
 
 function randomMath(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'F5') {
+        e.preventDefault();
+        return false;
+    }
+
+    if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
+        e.preventDefault();
+        return false;
+    }
+
+    if (e.ctrlKey && e.key === 'F5') {
+        e.preventDefault();
+        return false;
+    }
+
+    if (e.shiftKey && e.key === 'F5') {
+        e.preventDefault();
+        return false;
+    }
+
+    if (e.ctrlKey && e.key === 'w') {
+        e.preventDefault();
+        return false;
+    }
+});
+
 
 const paises = {
     // América Latina e Caribe
@@ -191,74 +219,248 @@ const paises = {
 
 // Definições de Carreira
 const carreiras = {
+    // criatividade
     "Programador": {
-            salarioBase: 3000, reqInteligencia: 80, reqEscolaridade: 25,
-            niveis: [
-                { nome: "Dev Junior", salario: 1500, experienciaNecessaria: 10 },
-                { nome: "Dev Pleno", salario: 2500, experienciaNecessaria: 80 },
-                { nome: "Dev Senior", salario: 8000, experienciaNecessaria: 140 },
-                { nome: "Supervisor", salario: 14000, experienciaNecessaria: 240 },
-                { nome: "Chefe de Departamento", salario: 24000, experienciaNecessaria: 400 }
-            ]
+    salarioBase: 3000, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    { nome: "Faculdade de programação", salario: 0, experiencia: 0 },
+    { nome: "Dev Junior", salario: 1500, experienciaNecessaria: 3 },
+    { nome: "Dev Pleno", salario: 2500, experienciaNecessaria: 5},
+    { nome: "Dev Senior", salario: 11400, experienciaNecessaria: 7},
+    { nome: "Supervisor", salario: 17000, experienciaNecessaria: 9},
+    { nome: "Chefe de Departamento", salario: 20000, experienciaNecessaria: 10}
+    ]
     },
 
+    // comunicação
     "Médico": {
-        salarioBase: 3000, reqInteligencia: 80, reqEscolaridade: 25,
-        niveis: [
-            { nome: "Interno", salario: 1500, experienciaNecessaria: 10 },
-            { nome: "Residente", salario: 2500, experienciaNecessaria: 80 },
-            { nome: "Clínico Geral", salario: 4000, experienciaNecessaria: 140 },
-            { nome: "Especialista", salario: 7000, experienciaNecessaria: 240 },
-            { nome: "Chefe de Departamento", salario: 12000, experienciaNecessaria: 400 }
-        ]
+    salarioBase: 3000, reqInteligencia: 100, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    { nome: "Faculdade de medicina", salario: 0, experienciaNecessaria: 0},
+    { nome: "Interno", salario: 600, experienciaNecessaria: 5},
+    { nome: "Residente", salario: 4000, experienciaNecessaria: 8},
+    { nome: "Clínico Geral", salario: 14000, experienciaNecessaria: 10},
+    { nome: "Especialista", salario: 20000, experienciaNecessaria: 15},
+    { nome: "Cirurgião", salario: 24000, experienciaNecessaria: 20}
+    ]
     },
+
+    // liderança
     "Advogado": {
-        salarioBase: 2500, reqInteligencia: 75, reqEscolaridade: 20,
-        niveis: [
-            { nome: "Advogado Júnior", salario: 2000, experienciaNecessaria: 10 },
-            { nome: "Advogado Pleno", salario: 3500, experienciaNecessaria: 100 },
-            { nome: "Advogado Sênior", salario: 6000, experienciaNecessaria: 180 },
-            { nome: "Sócio Júnior", salario: 8000, experienciaNecessaria: 300 },
-            { nome: "Sócio Sênior", salario: 10000, experienciaNecessaria: 500 }
-        ]
+    salarioBase: 2500, reqInteligencia: 75, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    { nome: "Faculdade de advocacia", salario: 0, experienciaNecessaria: 0},
+    { nome: "Advogado Júnior", salario: 3700, experienciaNecessaria: 4},
+    { nome: "Advogado Pleno", salario: 5700, experienciaNecessaria: 6},
+    { nome: "Advogado Sênior", salario: 11000, experienciaNecessaria: 8},
+    { nome: "Advogado Master", salario: 13000, experienciaNecessaria: 10},
+    { nome: "Juiz", salario: 30000, experienciaNecessaria: 15}
+    ]
     },
+
+    // liderança
     "Engenheiro": {
-        salarioBase: 2200, reqInteligencia: 70, reqEscolaridade: 20,
-        niveis: [
-            { nome: "Engenheiro Júnior", salario: 1800, experienciaNecessaria: 10 },
-            { nome: "Engenheiro Pleno", salario: 3000, experienciaNecessaria: 90 },
-            { nome: "Engenheiro Sênior", salario: 5000, experienciaNecessaria: 160 },
-            { nome: "Gerente de Projeto", salario: 8000, experienciaNecessaria: 260 },
-            { nome: "Diretor de Engenharia", salario: 15000, experienciaNecessaria: 440 }
-        ]
+    salarioBase: 2200, reqInteligencia: 70, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    {nome: "Faculdade de Engenharia", salario: 0, experienciaNecessaria: 0},
+    { nome: "Engenheiro Júnior", salario: 8400, experienciaNecessaria: 4},
+    { nome: "Engenheiro Pleno", salario: 10400, experienciaNecessaria: 7},
+    { nome: "Engenheiro Sênior", salario: 14000, experienciaNecessaria: 8},
+    { nome: "Gerente de Projeto", salario: 16400, experienciaNecessaria: 9},
+    { nome: "Diretor de Engenharia", salario: 24400, experienciaNecessaria: 10}
+    ]
     },
+
+    // comunicação
     "Artista": {
-        salarioBase: 1200, reqInteligencia: 50, reqEscolaridade: 12,
-        niveis: [
-            { nome: "Artista em Ascensão", salario: 1500, experienciaNecessaria: 10 },
-            { nome: "Artista Reconhecido", salario: 3000, experienciaNecessaria: 80 },
-            { nome: "Artista Global", salario: 6000, experienciaNecessaria: 240 }
-        ]
+    salarioBase: 1200, reqInteligencia: 50, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    { nome: "Artista em Ascensão", salario: 1500, experienciaNecessaria: 0},
+    { nome: "Artista Reconhecido", salario: 3000, experienciaNecessaria: 4},
+    { nome: "Artista Global", salario: 6000, experienciaNecessaria: 9}
+    ]
     },
+
+    // liderança e comunicação
     "Professor": {
-        salarioBase: 1800, reqInteligencia: 65, reqEscolaridade: 25,
-        niveis: [
-            { nome: "Professor Júnior", salario: 1800, experienciaNecessaria: 0 },
-            { nome: "Professor Pleno", salario: 2500, experienciaNecessaria: 80 },
-            { nome: "Professor Sênior", salario: 3500, experienciaNecessaria: 140 },
-            { nome: "Coordenador", salario: 5000, experienciaNecessaria: 200 },
-            { nome: "Diretor Escolar", salario: 7000, experienciaNecessaria: 300 }
-        ]
+    salarioBase: 1800, reqInteligencia: 65, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    {nome: "Faculdade de Pedagogia", salario: 0, experienciaNecessaria: 0},
+    { nome: "Professor Júnior", salario: 2200, experienciaNecessaria: 4},
+    { nome: "Professor Pleno", salario: 3000, experienciaNecessaria: 6},
+    { nome: "Professor Sênior", salario: 3600, experienciaNecessaria: 8},
+    { nome: "Coordenador", salario: 4000, experienciaNecessaria: 9},
+    { nome: "Diretor Escolar", salario: 6600, experienciaNecessaria: 12}
+    ]
     },
+
+    // criatividade e comunicação
     "Empreendedor": {
-        salarioBase: 1000, reqInteligencia: 60, reqEscolaridade: 20,
-        niveis: [
-            { nome: "Pequeno Empresário", salario: 1200, experienciaNecessaria: 10 },
-            { nome: "Empresário de Sucesso", salario: 4000, experienciaNecessaria: 160 },
-            { nome: "Magnata", salario: 10000, experienciaNecessaria: 250 }
-        ]
-    }
+    salarioBase: 1000, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    { nome: "Pequeno Empresário", salario: 4600, experienciaNecessaria: 0},
+    { nome: "Empresário de Sucesso", salario: 7000, experienciaNecessaria: 5},
+    { nome: "Magnata", salario: 14000, experienciaNecessaria: 8}
+    ]
+    },
+
+    // criatividade
+    "Cientista": {
+    salarioBase: 2800, reqInteligencia: 85, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    { nome: "Assistente de Pesquisa", salario: 3000, experienciaNecessaria: 0},
+    { nome: "Pesquisador Pleno", salario: 4000, experienciaNecessaria: 3},
+    { nome: "Pesquisador Sênior", salario: 8000, experienciaNecessaria: 6},
+    { nome: "Líder de Laboratório", salario: 12000, experienciaNecessaria: 9},
+    { nome: "Diretor de Pesquisa", salario: 20000, experienciaNecessaria: 10}
+    ]
+    },
+
+    // liderança
+    "Policial": {
+    salarioBase: 1500, reqInteligencia: 55, reqEscolaridadem: 12, reqEscolaridade: 12,
+    niveis: [
+    { nome: "Soldado", salario: 4400, experienciaNecessaria: 0},
+    { nome: "Cabo", salario: 6400, experienciaNecessaria: 2},
+    { nome: "Sargento", salario: 7600, experienciaNecessaria: 4},
+    { nome: "Tenente", salario: 14000, experienciaNecessaria: 6},
+    { nome: "Capitão", salario: 16000, experienciaNecessaria: 8},
+    { nome: "Coronel", salario: 30000, experienciaNecessaria: 18}
+    ]
+    },
+
+    // criatividade
+    "Chef de Cozinha": {
+    salarioBase: 1400, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    { nome: "Auxiliar de Cozinha", salario: 1200, experienciaNecessaria: 0},
+    { nome: "Faculdade de Gastronomia", salario: 1200, experienciaNecessaria: 1},
+    { nome: "Cozinheiro", salario: 2000, experienciaNecessaria: 5},
+    { nome: "Sous Chef", salario: 3500, experienciaNecessaria: 7},
+    { nome: "Chef Executivo", salario: 7000, experienciaNecessaria: 9},
+    { nome: "Chef Famoso", salario: 12000, experienciaNecessaria: 10}
+    ]
+    },
+
+    // liderança
+    "Piloto": {
+    salarioBase: 2500, reqInteligencia: 75, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    { nome: "Copiloto", salario: 2500, experienciaNecessaria: 3},
+    { nome: "Piloto Comercial", salario: 6000, experienciaNecessaria: 4},
+    { nome: "Piloto de Linha Aérea", salario: 12000, experienciaNecessaria: 8},
+    { nome: "Instrutor de Voo", salario: 16000, experienciaNecessaria: 12},
+    { nome: "Comandante Internacional", salario: 25000, experienciaNecessaria: 15}
+    ]
+    },
+
+    // criatividade
+    "Jogador de Futebol": {
+    salarioBase: 1000, reqInteligencia: 45, reqEscolaridade: 0, reqEscolaridadem: 0,
+    niveis: [
+    { nome: "Jogador de Base", salario: 800, experienciaNecessaria: 0 },
+    { nome: "Jogador Profissional", salario: 5000, experienciaNecessaria: 2},
+    { nome: "Titular de Elite", salario: 15000, experienciaNecessaria: 4},
+    { nome: "Craque Internacional", salario: 40000, experienciaNecessaria: 6}
+    ]
+    },
+
+    // comunicação
+    "Youtuber": {
+    salarioBase: 800, reqInteligencia: 50, reqEscolaridade: 0, reqEscolaridadem: 0,
+    niveis: [
+    { nome: "Criador Iniciante", salario: 1000, experienciaNecessaria: 0 },
+    { nome: "Criador Popular", salario: 3000, experienciaNecessaria: 2},
+    { nome: "Influencer", salario: 7000, experienciaNecessaria: 3},
+    { nome: "Celebridade Digital", salario: 15000, experienciaNecessaria: 6}
+    ]
+    },
+
+    // comunicação e liderança
+    "Político": {
+    salarioBase: 2500, reqInteligencia: 70, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    { nome: "Vereador", salario: 3000, experienciaNecessaria: 0},
+    { nome: "Deputado", salario: 10000, experienciaNecessaria: 10},
+    { nome: "Senador", salario: 20000, experienciaNecessaria: 15},
+    { nome: "Governador", salario: 35000, experienciaNecessaria: 25},
+    { nome: "Presidente", salario: 50000, experienciaNecessaria: 30}
+    ]
+    },
+
+    // liderança
+    "Militar": {
+    salarioBase: 1500, reqInteligencia: 60, reqEscolaridadem: 12, reqEscolaridade: 0,
+    niveis: [
+    { nome: "Recruta", salario: 1200, experienciaNecessaria: 0 },
+    { nome: "Cabo", salario: 2000, experienciaNecessaria: 2},
+    { nome: "Sargento", salario: 3200, experienciaNecessaria: 5},
+    { nome: "Tenente", salario: 4500, experienciaNecessaria: 7},
+    { nome: "General", salario: 10000, experienciaNecessaria: 13}
+    ]
+    },
+    // criatividade
+    "Cientista de Dados": {
+    salarioBase: 3500, reqInteligencia: 85, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    {nome: "Faculdade de Ciências de Dados", salario: 0, experienciaNecessaria: 0},
+    { nome: "Analista de Dados", salario: 3000, experienciaNecessaria: 4},
+    { nome: "Cientista de Dados Júnior", salario: 6000, experienciaNecessaria: 6},
+    { nome: "Cientista de Dados Pleno", salario: 10000, experienciaNecessaria: 7},
+    { nome: "Cientista de Dados Sênior", salario: 18000, experienciaNecessaria: 10},
+    { nome: "Head de Dados", salario: 30000, experienciaNecessaria: 13}
+    ]
+    },
+
+    // criatividade
+    "Farmaceutico":{
+    salarioBase: 4600, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    {nome: "Faculdade de Farmácia", salario: 0, experienciaNecessaria: 0},
+    {nome: "Recém-formado", salario: 3000, experienciaNecessaria: 4},
+    {nome: "Farmacêutico (Pleno/Sênior)", salario: 4500, experienciaNecessaria: 6},
+    {nome: "Responsável Técnico (RT)", salario: 5000, experienciaNecessaria: 8},
+    {nome: "Gerente de Farmácia / Gestão", salario: 6000, experienciaNecessaria: 10},
+
+    ]
+    },
+
+    // liderança
+    "Perito Criminal":{
+    salarioBase: 11000, reqInteligencia: 70, reqEscolaridade: 12, reqEscolaridadem: 0,
+    niveis: [
+    {nome: "Auxiliar de Papiloscopista / Agente", salario: 4500, experienciaNecessaria: 2},
+    {nome: "Investigador / Escrivão", salario: 5800, experienciaNecessaria: 4},
+    {nome: "Perito Criminal / Médico Legista", salario: 12000, experienciaNecessaria: 6},
+    {nome: "Delegado de Polícia", salario: 26000, experienciaNecessaria: 10},
+
+    ]
+    },
+
+    // criatividade
+    "Gamer":{
+    salarioBase: 750, reqInteligencia: 25, reqEscolaridade: 0, reqEscolaridadem: 0,
+    niveis: [
+    {nome: "Gamer Iniciante", salario: 50, experienciaNecessaria:0},
+    {nome: "Gamer intermediário", salario: 500, experienciaNecessaria:2},
+    {nome: "Gamer avançado", salario: 1000, experienciaNecessaria:4},
+    ]
+    },
+
+    // comunicação
+    "Empacotador":{
+    salarioBase: 2000, reqInteligencia: 50, reqEscolaridade: 6, reqEscolaridadem: 0,
+    niveis: [
+    {nome: "Nível I", salario: 1600, experienciaNecessaria: 0},
+    {nome: "Nível II", salario: 2200, experienciaNecessaria: 2},
+    {nome: "Nível III", salario: 2800, experienciaNecessaria: 4},
+    ]
+    },
 };
+
+//====================================
+//colocar habilidade em cada profissão
+//==================================== 
 
 function novaVida() {
     const nome = document.getElementById("nome").value || "Jogador";
@@ -290,6 +492,7 @@ function novaVida() {
         classe,
         nacionalidade: pais.nome,
         escolaridade: 0,
+        escolaridadem: 0,
         carreira: null,
         nivelCarreira: 0, // Nível atual na carreira
         salario: 0,
@@ -316,7 +519,8 @@ function novaVida() {
         parceiro: null,                   // Para relacionamento amoroso
         filhosLista: [],                  // Lista de filhos
         aposentado: false,
-        fidelidadeJogador: randomMath(70, 100) // Fidelidade do jogador
+        fidelidadeJogador: randomMath(70, 100), // Fidelidade do jogador
+        
     };
 
     // Inicializa relações familiares com idades realistas
@@ -331,6 +535,7 @@ function novaVida() {
     document.getElementById("menu").classList.add("hidden");
     document.getElementById("jogo").classList.remove("hidden");
     atualizarStatus();
+    salvarAutomatico();
 }
 
 function atualizarStatus() {
@@ -344,6 +549,7 @@ function atualizarStatus() {
 
     document.getElementById("estatisticas").innerText =
         `Escolaridade: ${jogador.escolaridade}
+Escolaridade militar: ${jogador.escolaridadem}
 Carreira: ${jogador.carreira || "Nenhuma"} ${jogador.carreira ? `(${carreiras[jogador.carreira].niveis[jogador.nivelCarreira].nome})` : ''}
 Salário: R$${jogador.salario}/mês
 Dinheiro: R$${jogador.dinheiro}
@@ -359,12 +565,15 @@ Dívida: R$${jogador.divida.toFixed(2)}
 Vícios: ${jogador.vicios.length > 0 ? jogador.vicios.join(', ') : 'Nenhum'}`;
 
 
+
     atualizarBarra("barra-saude", jogador.saude);
     atualizarBarra("barra-felicidade", jogador.felicidade);
     atualizarBarra("barra-saude-mental", jogador.saudeMental);
     
     // Atualiza o display de dinheiro no canto superior direito
     document.getElementById("aparecer").innerText = `R$ ${jogador.dinheiro.toFixed(2)}`;
+    
+
 }
 
 function atualizarBarra(id, valor) {
@@ -377,13 +586,21 @@ function atualizarBarra(id, valor) {
 ========================= */
 function passarAno() {
     if (!jogador.vivo) return;
-    jogador.idade++;
+    jogador.idade+=1
+    if (jogador.carreira !==null){
+        if (jogador.inteligencia !==100){
+            jogador.inteligencia+=5}
+    } 
+    if (jogador.idade >6) {
+        if (jogador.inteligencia !==100){
+            jogador.inteligencia--}
+    }
     jogador.patrimonio = (jogador.patrimonio*0.1)+jogador.patrimonio
     eventoAleatorio()
     
     // Eventos de idade do jogador
     if (jogador.idade === 6) {
-        alert("Você começou o ensino fundamental!");
+        alert("Você pode começar o ensino fundamental ou ensino militar!");
     } else if (jogador.idade === 18) {
         alert("Você completou 18 anos! Agora pode trabalhar e dirigir.");
     } else if (jogador.idade === 65 && !jogador.aposentado) {
@@ -410,7 +627,7 @@ function passarAno() {
     // Se tiver carreira e não aposentado, ganha salário
     if (jogador.carreira && !jogador.aposentado) {
         jogador.dinheiro += jogador.salario 
-        jogador.experiencia += 5;
+        jogador.experiencia += 1;
 
         // Tenta promoção
         const carreiraAtual = carreiras[jogador.carreira];
@@ -475,8 +692,9 @@ function passarAno() {
                 alert("Parabéns! Você quitou todas as suas dívidas!");
             }
         }
+        
     }
-
+    
     atualizarStatus();
 
     // Gerenciar vícios
@@ -486,16 +704,16 @@ function passarAno() {
         let impactoMental = 0;
         switch (vicio) {
             case "Jogos de Azar":
-                custoVicio = randomMath(100, 500);
+                custoVicio = randomMath(1000, 5000);
                 impactoMental = -randomMath(3, 8);
                 break;
             case "Drogas":
-                custoVicio = randomMath(300, 1000);
+                custoVicio = randomMath(3000, 10000);
                 impactoSaude = -randomMath(5, 15);
                 impactoMental = -randomMath(10, 20);
                 break;
             case "Álcool":
-                custoVicio = randomMath(150, 600);
+                custoVicio = randomMath(1500, 6000);
                 impactoSaude = -randomMath(3, 10);
                 impactoMental = -randomMath(5, 15);
                 break;
@@ -541,6 +759,9 @@ function passarAno() {
             }
         }
     }
+
+    
+
     atualizarStatus();
 
 
@@ -549,97 +770,143 @@ function passarAno() {
     // Checar morte de relações
     checarMorteRelacoes();
 
-    // Checar morte do jogador
-    if (jogador.saude <= 0 || jogador.idade >= jogador.expectativaVida || jogador.saudeMental <= 0) {
-        jogador.vivo = false;
-        alert("Sua vida chegou ao fim.");
-    }
     atualizarStatus();
-    
 
+    verificarMorte();
+
+    document.getElementById("relacoes").classList.add("hidden");
+
+    document.getElementById("atividades").classList.add("hidden");
+
+    document.getElementById("carreira").classList.add("hidden");
+    
 }
 
-/* =========================
-   EVENTOS ALEATÓRIOS
-========================= */
+//==============
+//=Checar morte=
+//==============
+function verificarMorte() {
+    if (jogador.saude <= 0 || jogador.idade >= jogador.expectativaVida || jogador.saudeMental <= 0) {
+        jogador.vivo = false;
+        
+        const reiniciar = confirm(`Sua vida chegou ao fim aos ${jogador.idade} anos.\n\n` +`Causa da morte: ${causaDaMorte()}\n\n` +`Deseja começar recomeçar sua vida?`);
+
+        if (reiniciar) {
+            novaVida();
+        } else {
+            mostrarMenuPrincipal();
+        }
+    }
+}
+
+function causaDaMorte() {
+    if (jogador.saude <= 0) return "Sua saúde chegou a zero.";
+    if (jogador.saudeMental <= 0) return "Você não aguentou a pressão mental.";
+    if (jogador.idade >= jogador.expectativaVida) return "Velhice.";
+    return "Destino incerto.";
+}
+
+function reiniciarJogo() {
+    jogador = novaVida(); 
+    jogador.vivo = true;
+    
+    mostrarOJogo();
+    
+    novaVida(); 
+}
+
+function mostrarMenuPrincipal() {
+    document.getElementById("menu").classList.remove("hidden");
+    
+    document.getElementById("jogo").classList.add("hidden");
+
+    document.getElementById("relacoes").classList.add("hidden");
+
+    document.getElementById("atividades").classList.add("hidden");
+
+    document.getElementById("carreira").classList.add("hidden");
+}
+function mostrarOJogo() {
+    document.getElementById("menu").classList.add("hidden");
+    document.getElementById("jogo").classList.remove("hidden");
+}
+
 const eventos = [
     // 💰 Dinheiro
     { texto: "Você achou R$50 na rua!", dinheiro: +50, felicidade: +2 },
-    { texto: "Você foi assaltado e perdeu R$200.", dinheiro: -200, felicidade: -5, saudeMental: -5 },
-    { texto: "Herança surpresa! Você ganhou R$5000.", dinheiro: +5000, felicidade: +10 },
-    { texto: "Você perdeu sua carteira com R$100 dentro.", dinheiro: -100, felicidade: -2 },
-    { texto: "Ganhou R$1000 na loteria local!", dinheiro: +1000, felicidade: +8 },
-    { texto: "Você pagou uma multa de trânsito de R$150.", dinheiro: -150, felicidade: -2 },
-    { texto: "Seu chefe te deu um bônus de R$500!", dinheiro: +500, felicidade: +5 },
-    { texto: "Você investiu errado e perdeu R$800.", dinheiro: -800, felicidade: -6, saudeMental: -5 },
-    { texto: "Você ganhou uma gorjeta generosa de R$200.", dinheiro: +200 },
-    { texto: "Se envolveu em golpe financeiro e perdeu R$1000.", dinheiro: -1000, felicidade: -8, saudeMental: -10 },
-    { texto: "Você encontrou um tesouro escondido! R$10.000!", dinheiro: +10000, felicidade: +20, saudeMental: +10,  }, 
-    { texto: "Seu carro quebrou e o conserto custou R$700.", dinheiro: -700, felicidade: -5 },
-    { texto: "Você recebeu um reembolso inesperado de R$300.", dinheiro: +300 },
+    { texto: "Você foi assaltado e perdeu R$200.", dinheiro: -200, felicidade: -15, saudeMental: -20 , condicao: () => jogador.idade >= 13},
+    { texto: "Herança surpresa! Você ganhou R$5500.", dinheiro: +5500, felicidade: +15 },
+    { texto: "Você perdeu sua carteira com R$100 dentro.", dinheiro: -100, felicidade: -8 },
+    { texto: "Ganhou R$1000 na loteria local!", dinheiro: +1000, felicidade: +8, condicao: () => jogador.idade >= 18 },
+    { texto: "Você pagou uma multa de trânsito de R$150.", dinheiro: -150, felicidade: -5, condicao: () => jogador.idade >= 18 },
+    { texto: "Seu chefe te deu um bônus de R$500!", dinheiro: +500, felicidade: +5, condicao: () => jogador.carreira !== null},
+    { texto: "Você investiu errado e perdeu R$1000.", dinheiro: -1000, felicidade: -10, saudeMental: -5, condicao: () => jogador.idade >= 18 },
+    { texto: "Se envolveu em golpe financeiro e perdeu R$1000.", dinheiro: -1000, felicidade: -8, saudeMental: -10, condicao: () => jogador.idade >= 18 },
+    { texto: "Você encontrou um tesouro escondido! R$10.000!", dinheiro: +10000, felicidade: +20, saudeMental: +10, condicao: () => jogador.idade >= 7 }, 
+    { texto: "Seu carro quebrou e o conserto custou R$700.", dinheiro: -700, felicidade: -5, condicao: () => jogador.idade >= 18 },
+    { texto: "Você recebeu um reembolso inesperado de R$300.", dinheiro: +300, condicao: () => jogador.idade >= 18 },
     { texte: "Você se foi atropelado sofeu danos mas ganhou um seguro de R$2500.", dinheiro: +2500, saude:-25, saudeMental: -10, felicidade: -15},
 
     // 🤒 Saúde
-    { texto: "Você ficou gripado.", saude: -5 },
-    { texto: "Um resfriado forte te deixou de cama.", saude: -10, felicidade: -3 },
-    { texto: "Você começou a praticar corrida e ficou mais saudável!", saude: +8, felicidade: +3 },
-    { texto: "Você quebrou a perna num acidente.", saude: -20, felicidade: -5, saudeMental: -5 },
+    { texto: "Você ficou gripado.", saude: -8 },
+    { texto: "Um resfriado forte te deixou de cama.", saude: -15, felicidade: -3 },
+    { texto: "Você começou a praticar corrida e ficou mais saudável!", saude: +8, felicidade: +5 },
+    { texto: "Você quebrou a perna num acidente.", saude: -20, felicidade: -10, saudeMental: -8 },
     { texto: "Você começou a comer mais saudável.", saude: +5 },
-    { texto: "Você ficou desidratado em um dia muito quente.", saude: -6 },
+    { texto: "Você ficou desidratado em um dia muito quente.", saude: -10 },
     { texto: "Você dormiu bem e acordou renovado!", saude: +4, felicidade: +2 },
     { texto: "Você pegou dengue e precisou repousar.", saude: -15, felicidade: -5 },
-    { texto: "Você se exercitou bastante este ano.", saude: +7 },
-    { texto: "Você sofreu um pequeno acidente de carro.", saude: -12, felicidade: -3, saudeMental: -5 },
-    { texto: "Você foi diagnosticado com uma doença crônica. Sua saúde diminui mais rápido.", saude: -10, saudeMental: -10, condicao: () => !jogador.doencaCronica, efeito: () => jogador.doencaCronica = true }, // Evento raro
+    { texto: "Você se exercitou bastante este ano.", saude: +10 },
+    { texto: "Você sofreu um pequeno acidente de carro.", saude: -12, felicidade: -3, saudeMental: -20 },
+    { texto: "Você foi diagnosticado com uma doença crônica. Sua saúde diminui mais rápido.", saude: -10, saudeMental: -15, condicao: () => !jogador.doencaCronica, efeito: () => jogador.doencaCronica = true }, // Evento raro
     { texto: "Você se recuperou de uma doença!", saude: +15, felicidade: +10, condicao: () => jogador.saude < 80 },
 
     // 😀 Felicidade
     { texto: "Você viu um cachorrinho fofo na rua!", felicidade: +5 },
     { texto: "Você saiu com amigos e se divertiu.", felicidade: +10 },
-    { texto: "Você brigou com um amigo próximo.", felicidade: -12, saudeMental: -5 },
+    { texto: "Você brigou com um amigo muito próximo.", felicidade: -15, saudeMental: -10 },
     { texto: "Você descobriu um novo hobby que adora!", felicidade: +15 },
-    { texto: "Você terminou um relacionamento.", felicidade: -20, saudeMental: -15, condicao: () => jogador.parceiro !== null }, // Só se tiver parceiro
-    { texto: "Você recebeu um elogio inesperado.", felicidade: +8 },
-    { texto: "Você ganhou um presente de alguém querido.", felicidade: +12 },
+    { texto: "Você terminou um relacionamento.", felicidade: -25, saudeMental: -20, condicao: () => jogador.parceiro !== null }, // Só se tiver parceiro
+    { texto: "Você recebeu um elogio inesperado.", felicidade: +5 },
+    { texto: "Você ganhou um presente de alguém querido.", felicidade: +10 },
     { texto: "Você perdeu um objeto de estimação.", felicidade: -10, saudeMental: -5 },
-    { texto: "Você assistiu a um filme incrível!", felicidade: +6 },
+    { texto: "Você assistiu a um filme incrível!", felicidade: +10 },
     { texto: "Você teve um pesadelo recorrente.", felicidade: -5, saudeMental: -3 },
-    { texto: "Você realizou um sonho de infância!", felicidade: +25, saudeMental: +15,}, 
+    { texto: "Você realizou um sonho de infância!", felicidade: +25, saudeMental: +20,}, 
 
     // 👨‍👩‍👦 Família & Relações
     { texto: "Você brigou com seu irmão.", felicidade: -5, saudeMental: -3 },
-    { texto: "Você passou um tempo com sua mãe.", felicidade: +10 },
-    { texto: "Você foi em um churrasco de família divertido.", felicidade: +8 },
-    { texto: "Você ajudou seu pai e ele ficou orgulhoso.", felicidade: +6 },
-    { texto: "Você se reconciliou com um amigo antigo.", felicidade: +12 },
-    { texto: "Você terminou uma amizade de longa data.", felicidade: -15, saudeMental: -10 },
+    { texto: "Você passou um tempo com sua mãe.", felicidade: +8 },
+    { texto: "Você foi em um churrasco de família divertido.", felicidade: +10 },
+    { texto: "Você ajudou seu pai e ele ficou orgulhoso.", felicidade: +5 },
+    { texto: "Você se reconciliou com um amigo antigo.", felicidade: +15 },
+    { texto: "Você terminou uma amizade de longa data.", felicidade: -25, saudeMental: -20 },
     { texto: "Você recebeu uma ligação inesperada de alguém especial.", felicidade: +10 },
     { texto: "Você foi padrinho de casamento de um amigo.", felicidade: +15 },
     { texto: "Você foi traído em um relacionamento.", felicidade: -25, saudeMental: -20, condicao: () => jogador.parceiro !== null },
-    { texto: "Você conheceu uma pessoa incrível em uma festa!", felicidade: +20, condicao: () => jogador.idade >= 16 && jogador.parceiro === null },
+    { texto: "Você conheceu uma pessoa incrível em uma festa!", felicidade: +15, condicao: () => jogador.idade >= 16 && jogador.parceiro === null },
     { texto: "Um parente distante te visitou.", felicidade: +7 },
     { texto: "Você teve uma discussão séria com um familiar.", felicidade: -10, saudeMental: -5 },
 
     // 📈 Carreira
-    { texto: "Você recebeu uma promoção!", salario: +500, felicidade: +10, condicao: () => jogador.carreira !== null },
-    { texto: "Seu chefe brigou com você.", felicidade: -10, saudeMental: -5, condicao: () => jogador.carreira !== null },
+    { texto: "Você recebeu uma promoção!", salario: +500, felicidade: +10, experiencia: +5, condicao: () => jogador.carreira !== null },
+    { texto: "Seu chefe brigou com você.", felicidade: -10, saudeMental: -5, salario: -100, condicao: () => jogador.carreira !== null },
     { texto: "Você ganhou reconhecimento no trabalho.", felicidade: +8, condicao: () => jogador.carreira !== null },
-    { texto: "Você foi demitido!", salario: -jogador.salario, felicidade: -20, saudeMental: -15, condicao: () => jogador.carreira !== null, efeito: () => { jogador.carreira = null; jogador.salario = 0; jogador.nivelCarreira = 0; jogador.experiencia = 0; } },
-    { texto: "Você conseguiu um novo emprego melhor!", salario: +1000, felicidade: +15, condicao: () => jogador.carreira !== null },
+    { texto: "Você conseguiu um novo emprego melhor!", salario: +500, felicidade: +15,  condicao: () => jogador.carreira !== null, },
     { texto: "Um colega roubou sua ideia no trabalho.", felicidade: -8, saudeMental: -5, condicao: () => jogador.carreira !== null },
-    { texto: "Você participou de um curso e aprendeu muito!", experiencia: +5, felicidade: +5, inteligencia: +2 },
-    { texto: "Seu salário foi reajustado em R$200.", salario: +200, condicao: () => jogador.carreira !== null },
+    { texto: "Você participou de um curso e aprendeu muito!", experiencia: +5, felicidade: +7, inteligencia: +3 },
+    { texto: "Seu salário aumentou em R$200.", salario: +200, condicao: () => jogador.carreira !== null },
     { texto: "Você se desentendeu com um colega.", felicidade: -5, saudeMental: -3, condicao: () => jogador.carreira !== null },
     { texto: "Você recebeu um prêmio no trabalho!", felicidade: +12, condicao: () => jogador.carreira !== null },
     { texto: "Você foi acusado de má conduta no trabalho.", felicidade: -15, saudeMental: -10, condicao: () => jogador.carreira !== null },
     { texto: "Você iniciou um negócio próprio e está prosperando!", dinheiro: +2000, felicidade: +20, condicao: () => jogador.idade >= 25 && jogador.dinheiro > 5000 },
 
     // 🌍 Eventos sociais/aleatórios
-    { texto: "Um famoso te seguiu no Instagram!", felicidade: +10 },
-    { texto: "Você viralizou com um vídeo engraçado!", felicidade: +15 },
+    { texto: "Um famoso te seguiu no Instagram!", felicidade: +25 },
+    { texto: "Você viralizou com um vídeo engraçado e ganhou R$:500,00", felicidade: +20, dinheiro: + 500 },
     { texto: "Você foi cancelado nas redes sociais.", felicidade: -15, saudeMental: -10 },
     { texto: "Você ganhou ingressos grátis para um show!", felicidade: +12 },
-    { texto: "Você perdeu seu celular.", dinheiro: -150, felicidade: -5 },
+    { texto: "Você perdeu seu celular.", dinheiro: -1500, felicidade: -5 },
     { texto: "Um vizinho fez fofoca sobre você.", felicidade: -8, saudeMental: -5 },
     { texto: "Você ajudou uma pessoa idosa e se sentiu bem.", felicidade: +10 },
     { texto: "Você adotou um gatinho!", felicidade: +20 },
@@ -653,23 +920,28 @@ const eventos = [
     { texto: "Você salvou uma criança de um acidente!", felicidade: +30, saudeMental: +15 },
     { texto: "Você encontrou uma mala com R$5000.", dinheiro: +5000 },
     { texto: "Você foi atropelado levemente.", saude: -25, felicidade: -10, saudeMental: -10 },
-    { texto: "Você foi confundido com um famoso na rua.", felicidade: +10 },
-    { texto: "Você caiu em um golpe online e perdeu R$2000.", dinheiro: -2000, felicidade: -10, saudeMental: -10 },
-    { texto: "Você foi reconhecido como herói local!", felicidade: +25 },
-    { texto: "Você sofreu uma tentativa de assalto, mas escapou.", felicidade: -5, saudeMental: -10 },
+    { texto: "Você foi confundido com um famoso na rua.", felicidade: +15 },
+    { texto: "Você caiu em um golpe online e perdeu R$2000.", dinheiro: -2000, felicidade: -15, saudeMental: -15 },
+    { texto: "Você foi reconhecido como herói local!", felicidade: +30 },
+    { texto: "Você sofreu uma tentativa de assalto, mas escapou.", felicidade: -5, saudeMental: -15 },
+    { texto: "Você sofreu um assalto e quando reagiu, foi baleado. Sera que pessoas vão se lembrar de você?", saude: -100},
+    
+
+    
 
     // extras
     { texto: "Você ganhou um videogame novo.", felicidade: +12 },
-    { texto: "Você ficou viciado em jogos online e perdeu produtividade.", felicidade: -8, saudeMental: -5, condicao: () => !jogador.vicios.includes("Jogos de Azar"), efeito: () => jogador.vicios.push("Jogos de Azar"), chance: 0.005 },
-    { texto: "Você ganhou uma viagem internacional.", felicidade: +20 },
+    { texto: "Você ganhou uma viagem internacional.", felicidade: +25 },
     { texto: "Você se acidentou andando de bicicleta.", saude: -10, felicidade: -3 },
     { texto: "Você entrou em depressão temporária.", felicidade: -20, saudeMental: -25 },
     { texto: "Você escreveu um livro e vendeu bem!", dinheiro: +3000, felicidade: +15, inteligencia: +5, condicao: () => jogador.inteligencia >= 70, chance: 0.003 },
     { texto: "Você aprendeu uma nova língua!", experiencia: +10, felicidade: +5, inteligencia: +3 },
-    { texto: "Você foi multado em R$400 por estacionar errado.", dinheiro: -400, felicidade: -3 },
+    { texto: "Você foi multado em R$400 por estacionar errado.", dinheiro: -400, felicidade: -3, condicao: () => jogador.idade >= 18 },
     { texto: "Você descobriu um talento escondido!", felicidade: +15 },
     { texto: "Você teve um encontro romântico inesquecível.", felicidade: +20, condicao: () => jogador.idade >= 16 && jogador.parceiro === null },
-
+    { texto: "Você ganhou um lego novo e se lembrou da sua infância", felicidade: + 15, condicao: () => jogador.idade>=16},
+    { texto: "Você ganhou bonecas da Monster High e se lembrou da sua infância", felicidade: + 15, condicao: () => jogador.idade>=16},
+    { texto: "Você ganhou bonecos de Pokémon e se lembrou da sua infância", felicidade: + 15, condicao: () => jogador.idade>=16},
     // Eventos com Escolha
     {
         tipo: "escolha",
@@ -706,11 +978,11 @@ const eventos = [
         opcoes: [
             {
                 acao: "Aceitar a promoção",
-                efeitos: { salario: +500, experiencia: +10, felicidade: -10, saudeMental: -10, textoResultado: "Você aceitou a promoção! Seu salário aumentou, mas o estresse também." }
+                efeitos: { salario: +500, experiencia: +10, saudeMental: -15, textoResultado: "Você aceitou a promoção! Seu salário aumentou, mas o estresse também." }
             },
             {
                 acao: "Recusar a promoção",
-                efeitos: { felicidade: +5, saudeMental: +5, textoResultado: "Você recusou a promoção. Manteve sua paz de espírito, mas perdeu uma oportunidade de crescimento." }
+                efeitos: { felicidade: +2, saudeMental: +2, textoResultado: "Você recusou a promoção. Manteve sua paz de espírito, mas perdeu uma oportunidade de crescimento." }
             }
         ]
     },,
@@ -725,8 +997,8 @@ const eventos = [
                     dinheiro: -1000,
                     textoResultado: "Você investiu no negócio. ",
                     resultadoAleatorio: [
-                        { chance: 0.4, efeitos: { dinheiro: +2000, felicidade: +10, texto: "O negócio prosperou e você dobrou seu investimento!" } },
-                        { chance: 0.3, efeitos: { dinheiro: +500, felicidade: +5, texto: "O negócio deu um pequeno lucro." } },
+                        { chance: 0.3, efeitos: { dinheiro: +2000, felicidade: +10, texto: "O negócio prosperou e você dobrou seu investimento!" } },
+                        { chance: 0.4, efeitos: { dinheiro: +500, felicidade: +5, texto: "O negócio deu um pequeno lucro." } },
                         { chance: 0.3, efeitos: { dinheiro: -1000, felicidade: -10, texto: "O negócio faliu e você perdeu tudo!" } }
                     ]
                 }
@@ -750,7 +1022,7 @@ const eventos = [
                 efeitos: {
                     felicidade: +10, saude: -5, saudeMental: +5, textoResultado: "Você começou a beber para relaxar. ",
                     resultadoAleatorio: [
-                        { chance: 0.7, efeitos: { texto: "Ajudou a relaxar por enquanto." } },
+                        { chance: 0.7, efeitos: { texto: "Ajudou a relaxar, por enquanto." } },
                         { chance: 0.3, efeitos: { vicio: "Álcool", texto: "Você desenvolveu um vício em álcool!" } }
                     ]
                 }
@@ -791,8 +1063,11 @@ function aplicarEfeitos(efeitos) {
 }
 
 function eventoAleatorio() {
-    if (Math.random() >= 0) return;
 
+
+    if (Math.random() > 0.01 )
+    {
+        return};
     // Filtra eventos que podem acontecer com base nas condições
     const eventosDisponiveis = eventos.filter(e => !e.condicao || e.condicao());
     if (eventosDisponiveis.length === 0) return;
@@ -947,18 +1222,18 @@ function relacoesAvancadas() {
         });
     }
 
-    // Exibe relacionamentos
+    // Exibe relacionamentosAtividades
     jogador.relacoes.forEach((r, index) => {
         if (!r.vivo) return; // Não exibe se a pessoa morreu
 
         const bloco = document.createElement("div");
         bloco.className = "relacao";
-        bloco.innerHTML = `
+        bloco.innerHTML = `Atividades
             <p><b>${r.nome}</b> (${r.tipo}) - Nível: ${r.nivel} ${r.idade !== undefined ? `(${r.idade} anos)` : ''}</p>
             <button onclick="interagirAvancado(${index}, 'conversar')">Conversar</button>
             <button onclick="interagirAvancado(${index}, 'sair')">Sair Juntos</button>
             <button onclick="interagirAvancado(${index}, 'presente')">Dar Presente</button>
-            ${r.tipo === "Amizade" ? `<button onclick="tornarPaixao(${index})">Tornar Paixão</button>` : ""}
+            ${r.tipo === "Amizade" && jogador.idade >= 16 ? `<button onclick="tornarPaixao(${index})">Tornar Paixão</button>` : ""}
             ${r.tipo === "Paixão" ? `<button onclick="interagirAvancado(${index}, 'flertar')">Flertar</button>` : ""}
             ${r.tipo === "Paixão" && r.nivel >= 70 && !jogador.parceiro ? `<button onclick="pedirEmNamoro(${index})">Pedir em Namoro</button>` : ""}
             ${r.tipo === "Namoro" && r.nivel >= 80 ? `<button onclick="casar(${index})">Casar</button>` : ""}
@@ -1163,6 +1438,7 @@ function trairParceiro(index) {
         alert("Você traiu seu parceiro, mas não foi pego. Por enquanto...");
         jogador.felicidade -= 5; 
         jogador.saudeMental -= 5; // Culpa
+        jogador.fidelidadeJogador -= 20;
     } else {
         alert(`Seu parceiro, ${parceiroAtual.nome}, descobriu sua traição!`);
         parceiroAtual.nivel = Math.max(0, parceiroAtual.nivel - 50); // Grande queda no nível
@@ -1186,18 +1462,22 @@ function trairParceiro(index) {
    VIDA NOTURNA
 ========================= */
 function vidaNoturna() {
-    const div = document.getElementById("atividades");
-    div.classList.remove("hidden");
-    div.innerHTML = "<h3>Vida Noturna</h3>";
-
-    div.innerHTML += `
-        <button onclick="atividadeBalada()">Ir à balada (R$150)</button>
-        <button onclick="atividadeBar()">Ir ao bar (R$100)</button>
-        <button onclick="atividadeFesta()">Ir à festa (R$200)</button>
-        <button onclick="tentarVicio('Drogas')">Experimentar Drogas (Risco de Vício)</button>
-        <button onclick="tentarVicio('Álcool')">Beber Pesado (Risco de Vício)</button>
-        <button onclick="atividades()">Voltar</button>
-    `;
+    if (jogador.idade >= 18) {
+        const div = document.getElementById("atividades");
+        div.classList.remove("hidden");
+        div.innerHTML = "<h3>Vida Noturna</h3>";
+        
+        div.innerHTML += `
+            <button onclick="atividadeBalada()">Ir à balada (R$150)</button>
+            <button onclick="atividadeBar()">Ir ao bar (R$100)</button>
+            <button onclick="atividadeFesta()">Ir à festa (R$200)</button>
+            <button onclick="tentarVicio('Drogas')">Experimentar Drogas (Risco de Vício)</button>
+            <button onclick="tentarVicio('Álcool')">Beber Pesado (Risco de Vício)</button>
+            <button onclick="atividades()">Voltar</button>
+        `;
+    }else {
+        alert('Você precisa ter pelo menos 18 anos para ter vida noturna.')
+    }
 }
 
 function atividadeBalada() {
@@ -1243,15 +1523,15 @@ function tentarVicio(tipoVicio) {
 
     if (tipoVicio === "Drogas") {
         custo = 300;
-        chanceVicio = 0.4;
+        chanceVicio = 0.6;
         mensagem = "Você experimentou drogas. ";
     } else if (tipoVicio === "Álcool") {
         custo = 150;
-        chanceVicio = 0.3;
+        chanceVicio = 0.5;
         mensagem = "Você bebeu pesado. ";
     } else if (tipoVicio === "Jogos de Azar") {
         custo = 100;
-        chanceVicio = 0.35;
+        chanceVicio = 0.6;
         mensagem = "Você apostou pesado. ";
     }
 
@@ -1303,9 +1583,7 @@ function abrirExtras() {
     // Esconde outras telas antes de abrir as extras
     document.getElementById("carreira").classList.add("hidden");
     document.getElementById("atividades").classList.add("hidden");
-
     relacoesAvancadas();
-    // vidaNoturna(); // Chamado dentro de atividades agora
 }
 
 /* =========================
@@ -1314,19 +1592,20 @@ function abrirExtras() {
 function carreira() {
     const div = document.getElementById("carreira");
     div.classList.remove("hidden");
-    div.innerHTML = "<h3>Carreira</h3>";
+    div.innerHTML = "<h2>Carreira</h2>";
 
     // Esconde outras telas
     document.getElementById("relacoes").classList.add("hidden");
     document.getElementById("atividades").classList.add("hidden");
 
+    atualizarStatus();
 
     if (!jogador.carreira && jogador.idade >= 18) {
         div.innerHTML += `
-            <p>Escolha sua carreira:</p>
+            <h3>Escolha sua carreira:</h3>
             ${Object.keys(carreiras).map(c => {
                 const info = carreiras[c];
-                return `<button onclick="escolherCarreira('${c}')">${c} (Int: ${info.reqInteligencia}, Esc: ${info.reqEscolaridade})</button>`;
+                return `<button onclick="escolherCarreira('${c}')" class="carreirabt">${c}<br> (Int.: ${info.reqInteligencia}, Esc.: ${info.reqEscolaridade}, Esc.M.: ${info.reqEscolaridadem})</button><br>`;
             }).join('')}
         `;
     } else if (!jogador.carreira) {
@@ -1335,35 +1614,50 @@ function carreira() {
         const carreiraInfo = carreiras[jogador.carreira];
         const nivelAtual = carreiraInfo.niveis[jogador.nivelCarreira];
         const proximoNivel = carreiraInfo.niveis[jogador.nivelCarreira + 1];
-
+        atualizarStatus();
         div.innerHTML += `<p>Sua carreira atual: <b>${jogador.carreira}</b> (${nivelAtual.nome})</p>`;
         div.innerHTML += `<p>Salário: R$${jogador.salario}/mês</p>`;
         div.innerHTML += `<p>Experiência: ${jogador.experiencia}</p>`;
+        atualizarStatus();
         if (proximoNivel) {
             div.innerHTML += `<p>Próximo Nível (${proximoNivel.nome}): ${proximoNivel.experienciaNecessaria - jogador.experiencia} de experiência para promoção.</p>`;
+            atualizarStatus();
         } else {
             div.innerHTML += `<p>Você atingiu o nível máximo nesta carreira!</p>`;
+            atualizarStatus();
         }
-
+        atualizarStatus();
         div.innerHTML += `<button onclick="pedirAumento()">Pedir Aumento</button>`;
         div.innerHTML += `<button onclick="mudarCarreira()">Mudar de Carreira</button>`;
+        atualizarStatus();
         if (jogador.carreira === "Empreendedor") {
             div.innerHTML += `<button onclick="gerenciarNegocio()">Gerenciar Negócio</button>`;
+            atualizarStatus();
         }
         if (jogador.idade >= 60 && !jogador.aposentado) {
             div.innerHTML += `<button onclick="aposentar()">Aposentar</button>`;
+            atualizarStatus();
         }
+        atualizarStatus();
     }
+        
+    
+    atualizarStatus();
 }
 
 function escolherCarreira(nomeCarreira) {
     const info = carreiras[nomeCarreira];
-    if (jogador.inteligencia < info.reqInteligencia) {
+    if (jogador.inteligencia < info.reqInteligencia ) {
         alert(`Sua inteligência (${jogador.inteligencia}) é muito baixa para ser ${nomeCarreira} (requer ${info.reqInteligencia}).`);
         return;
     }
     if (jogador.escolaridade < info.reqEscolaridade) {
         alert(`Sua escolaridade (${jogador.escolaridade}) é muito baixa para ser ${nomeCarreira} (requer ${info.reqEscolaridade}).`);
+        return;
+    }
+
+    if (jogador.escolaridadem < info.reqEscolaridadem) {
+        alert(`Sua escolaridade Militar (${jogador.escolaridadem}) é muito baixa para ser ${nomeCarreira} (requer ${info.reqEscolaridadem}).`);
         return;
     }
 
@@ -1478,56 +1772,131 @@ function aposentar() {
 
 
 function atividades() {
-    const div = document.getElementById("atividades");
-    div.classList.remove("hidden");
-    div.innerHTML = "<h3>Atividades</h3>";
+    if (jogador.idade >= 6) {
+        const div = document.getElementById("atividades");
+        div.classList.remove("hidden");
+        div.innerHTML = "<h3>Atividades</h3>";
 
-    // Esconde outras telas
-    document.getElementById("relacoes").classList.add("hidden");
-    document.getElementById("carreira").classList.add("hidden");
+        // Esconde outras telas
+        document.getElementById("relacoes").classList.add("hidden");
+        document.getElementById("carreira").classList.add("hidden");
 
-    div.innerHTML += `
-        <button onclick="atividadeAcademia()">Ir à academia (Saúde +10, Felicidade +2)</button>
-        <button onclick="atividadeEstudar()">Estudar (Inteligência +5, Escolaridade +1)</button>
-        <button onclick="atividadeViajar()">Viajar (R$1000, Felicidade +15)</button>
-        <button onclick="atividadeHobby()">Praticar hobby (Felicidade +8)</button>
-        <button onclick="atividadeMedico()">Ir ao medico (R$1000 se for maior de idade, saude +10)
-        <button onclick="desenvolverHabilidade()">Desenvolver Habilidade</button>
-        <button onclick="vidaNoturna()">Vida Noturna</button>
-        <button onclick="abrirCassino()">Ir ao Cassino</button>
-        <button onclick="comprarMelhoria()">Comprar melhorias</button>
-        <button onclick="pilula()">Comprar uma pilula suspeita de uma Bruxa (R$100.000, 50% de chance de ser boa)</button>
-        ${jogador.vicios.length > 0 ? `<button onclick="tentarLargarVicio()">Tentar Largar Vício</button>` : ''}
-    `;
+        div.innerHTML += `
+            <button onclick="atividadeAcademia()">Ir à academia (Saúde +10, Felicidade +2)</button>
+            <button onclick="atividadeViajar()">Viajar (R$1000, Felicidade +15)</button>
+            <button onclick="atividadeHobby()">Praticar hobby (Felicidade +8)</button>
+            <button onclick="atividadeMedico()">Ir ao medico (R$1000 se for maior de idade, saude +10)
+            <button onclick="desenvolverHabilidade()">Desenvolver Habilidade</button>
+            <button onclick="vidaNoturna()">Vida Noturna</button>
+            <button onclick="abrirCassino()">Ir ao Cassino</button>
+            <button onclick="comprarMelhoria()">Comprar melhorias</button>
+            <button onclick="pilula()">Comprar uma pilula suspeita de uma Bruxa (R$100.000, 50% de chance de ser boa)</button>
+            ${jogador.vicios.length > 0 ? `<button onclick="tentarLargarVicio()">Tentar Largar Vício</button>` : ''}
+        `;
+    }else {
+        const div = document.getElementById("atividades");
+        div.classList.remove("hidden");
+        document.getElementById("carreira").classList.add("hidden");
+        div.innerHTML = "<h3>Atividades</h3>";
+        div.innerHTML += '<p>Você precisa ter pelo menos 6 anos para acessar a sessão "Atividades". </p>'
+    }
+}
+
+// Função para salvar manualmente com identificador
+function salvarComIdentificador() {
+    const id = prompt("Digite um nome/ID para este save (ex.: 'Antes do Cassino'):");
+    if (!id) return alert("Nome/ID obrigatório.");
+    
+    const chave = `save_${id.replace(/\s+/g, '_')}`; // Substitui espaços por underscores para chave válida
+    localStorage.setItem(chave, JSON.stringify(jogador));
+    alert(`Save '${id}' salvo com sucesso!`);
+}
+
+// Função para carregar um save por identificador
+function carregarComIdentificador() {
+    const saves = Object.keys(localStorage).filter(key => key.startsWith('save_'));
+    if (saves.length === 0) return alert("Nenhum save encontrado.");
+    
+    const opcoes = saves.map(key => key.replace('save_', '').replace(/_/g, ' ')).join('\n');
+    const escolha = prompt(`Saves disponíveis:\n${opcoes}\n\nDigite o nome/ID do save para carregar:`);
+    if (!escolha) return;
+    
+    const chave = `save_${escolha.replace(/\s+/g, '_')}`;
+    const salvo = localStorage.getItem(chave);
+    if (!salvo) return alert("Save não encontrado.");
+    
+    const confirmacao = confirm(`Carregar save '${escolha}'? Isso sobrescreverá sua vida atual.`);
+    if (confirmacao) {
+        jogador = JSON.parse(salvo);
+        atualizarStatus();
+        alert(`Save '${escolha}' carregado!`);
+    }
+}
+
+// Função para deletar um save
+function deletarSave() {
+    const saves = Object.keys(localStorage).filter(key => key.startsWith('save_'));
+    if (saves.length === 0) return alert("Nenhum save encontrado.");
+    
+    const opcoes = saves.map(key => key.replace('save_', '').replace(/_/g, ' ')).join('\n');
+    const escolha = prompt(`Saves disponíveis:\n${opcoes}\n\nDigite o nome/ID do save para deletar:`);
+    if (!escolha) return;
+    
+    const chave = `save_${escolha.replace(/\s+/g, '_')}`;
+    if (localStorage.getItem(chave)) {
+        localStorage.removeItem(chave);
+        alert(`Save '${escolha}' deletado!`);
+    } else {
+        alert("Save não encontrado.");
+    }
 }
 
 function atividadeAcademia() {
-    jogador.saude = Math.min(100, jogador.saude + 10);
-    jogador.felicidade = Math.min(100, jogador.felicidade + 2);
-    alert("Você foi à academia e melhorou sua saúde!");
+    if (jogador.idade >= 14) {
+        jogador.saude = Math.min(100, jogador.saude + 10);
+        jogador.felicidade = Math.min(100, jogador.felicidade + 2);
+        alert("Você foi à academia e melhorou sua saúde!");
+    }else {
+        alert("Você precisa ter 14 anos para ir à academia.")
+    }
     atualizarStatus();
 }
 
 function atividadeEstudar() {
-    if (jogador.idade < 5) {
-        alert("GUGU DADA");
-        return;
-    }else{
-        if (jogador.idade < 18 && jogador.escolaridade >= 12) {
-        alert("Você já concluiu o ensino médio.");
-        return;
+    if (jogador.idade >= 6){
+        jogador.inteligencia = Math.min(100, jogador.inteligencia + 6);
+        jogador.escolaridade ++
+        jogador.felicidade = Math.min(100, jogador.felicidade + 5);
+        alert(`Você estudou e sua inteligência aumentou para ${jogador.inteligencia}! Escolaridade: ${jogador.escolaridade}`);
+        if (jogador.escolaridade === 12){
+            alert('Você concluiu o ensino médio. Parabéns!')
+        }
+    } else {
+        jogador.inteligencia = Math.min(100, jogador.inteligencia + 6);
+        jogador.felicidade = Math.min(100, jogador.felicidade + 5);
+        alert(`Você estudou e sua inteligência aumentou para ${jogador.inteligencia}!`);
     }
-    if (jogador.idade>18) {
-    }
-    
-    jogador.inteligencia = Math.min(100, jogador.inteligencia + 5);
-    jogador.escolaridade += 1;
-    jogador.felicidade = Math.min(100, jogador.felicidade + 3);
-    alert(`Você estudou e sua inteligência aumentou para ${jogador.inteligencia}! Escolaridade: ${jogador.escolaridade}`);
     passarAno()
     atualizarStatus();
+}
+
+function atividadeEstudarm() {
+    if (jogador.escolaridadem === 12){
+        alert('Você concluiu o ensino médio militar. Parabéns!')
     }
-    
+    if (jogador.idade >= 6){
+        jogador.inteligencia = Math.min(100, jogador.inteligencia + 6);
+        jogador.escolaridade ++
+        jogador.escolaridadem ++
+        jogador.felicidade = Math.min(100, jogador.felicidade + 5);
+        alert(`Você estudou e sua inteligência aumentou para ${jogador.inteligencia}! Escolaridade Militar: ${jogador.escolaridadem} \nEscolaridade: ${jogador.escolaridade}`);
+    } else {
+        jogador.inteligencia = Math.min(100, jogador.inteligencia + 6);
+        jogador.felicidade = Math.min(100, jogador.felicidade + 5);
+        alert(`Você estudou e sua inteligência aumentou para ${jogador.inteligencia}!`);
+    }
+    passarAno()
+    atualizarStatus();    
 }
 
 function atividadeViajar() {
@@ -1568,7 +1937,6 @@ function atividadeMedico() {
             return; 
         }
     }
-
     atualizarStatus();
 }
 
@@ -1657,11 +2025,13 @@ function pilula() {
 }
 
 
+
+
 /* =========================
    CASSINO
 ========================= */
 function abrirCassino() {
-    if (jogador.idade>17) {
+    if (jogador.idade >= 17) {
         const div = document.getElementById("atividades");
         div.classList.remove("hidden");
         div.innerHTML = "<h3>Cassino</h3>";
@@ -1673,6 +2043,8 @@ function abrirCassino() {
             <button onclick="tentarVicio('Jogos de Azar')">Apostar Pesado (Risco de Vício)</button>
             <button onclick="atividades()">Voltar</button>
         `;
+    }else {
+        alert('Você precisa ter pelo menos 18 anos para ir ao cassino.')
     }
     
 }
