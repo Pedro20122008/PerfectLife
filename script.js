@@ -221,7 +221,7 @@ const paises = {
 const carreiras = {
     // criatividade
     "Programador": {
-    salarioBase: 3000, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 3000, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0, reqAparencia: 0, reqComunicacao: 0, reqLideranca: 0, reqCriatividade: 60,
     niveis: [
     { nome: "Faculdade de programação", salario: 0, experiencia: 0 },
     { nome: "Dev Junior", salario: 1500, experienciaNecessaria: 3 },
@@ -234,7 +234,7 @@ const carreiras = {
 
     // comunicação
     "Médico": {
-    salarioBase: 3000, reqInteligencia: 100, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 3000, reqInteligencia: 100, reqEscolaridade: 12, reqEscolaridadem: 0, reqAparencia: 0, reqComunicacao: 0, reqLideranca: 70, reqCriatividade: 0,
     niveis: [
     { nome: "Faculdade de medicina", salario: 0, experienciaNecessaria: 0},
     { nome: "Interno", salario: 600, experienciaNecessaria: 5},
@@ -247,7 +247,7 @@ const carreiras = {
 
     // liderança
     "Advogado": {
-    salarioBase: 2500, reqInteligencia: 75, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 2500, reqInteligencia: 75, reqEscolaridade: 12, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 60, reqCriatividade: 0,
     niveis: [
     { nome: "Faculdade de advocacia", salario: 0, experienciaNecessaria: 0},
     { nome: "Advogado Júnior", salario: 3700, experienciaNecessaria: 4},
@@ -260,7 +260,7 @@ const carreiras = {
 
     // liderança
     "Engenheiro": {
-    salarioBase: 2200, reqInteligencia: 70, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 2200, reqInteligencia: 70, reqEscolaridade: 12, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 60, reqCriatividade: 60,
     niveis: [
     {nome: "Faculdade de Engenharia", salario: 0, experienciaNecessaria: 0},
     { nome: "Engenheiro Júnior", salario: 8400, experienciaNecessaria: 4},
@@ -273,7 +273,7 @@ const carreiras = {
 
     // comunicação
     "Artista": {
-    salarioBase: 1200, reqInteligencia: 50, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 1200, reqInteligencia: 0, reqEscolaridade:0, reqEscolaridadem: 0, reqAparencia: 75, reqComunicacao: 65, reqLideranca: 0, reqCriatividade: 65,
     niveis: [
     { nome: "Artista em Ascensão", salario: 1500, experienciaNecessaria: 0},
     { nome: "Artista Reconhecido", salario: 3000, experienciaNecessaria: 4},
@@ -283,7 +283,7 @@ const carreiras = {
 
     // liderança e comunicação
     "Professor": {
-    salarioBase: 1800, reqInteligencia: 65, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 1800, reqInteligencia: 65, reqEscolaridade: 12, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 60, reqLideranca: 65, reqCriatividade: 0,
     niveis: [
     {nome: "Faculdade de Pedagogia", salario: 0, experienciaNecessaria: 0},
     { nome: "Professor Júnior", salario: 2200, experienciaNecessaria: 4},
@@ -296,7 +296,7 @@ const carreiras = {
 
     // criatividade e comunicação
     "Empreendedor": {
-    salarioBase: 1000, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 1000, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 75, reqLideranca: 0, reqCriatividade: 70,
     niveis: [
     { nome: "Pequeno Empresário", salario: 4600, experienciaNecessaria: 0},
     { nome: "Empresário de Sucesso", salario: 7000, experienciaNecessaria: 5},
@@ -306,7 +306,7 @@ const carreiras = {
 
     // criatividade
     "Cientista": {
-    salarioBase: 2800, reqInteligencia: 85, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 2800, reqInteligencia: 85, reqEscolaridade: 12, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 0, reqCriatividade: 70,
     niveis: [
     { nome: "Assistente de Pesquisa", salario: 3000, experienciaNecessaria: 0},
     { nome: "Pesquisador Pleno", salario: 4000, experienciaNecessaria: 3},
@@ -318,7 +318,7 @@ const carreiras = {
 
     // liderança
     "Policial": {
-    salarioBase: 1500, reqInteligencia: 55, reqEscolaridadem: 12, reqEscolaridade: 12,
+    salarioBase: 1500, reqInteligencia: 55, reqEscolaridadem: 12, reqEscolaridade: 12,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 75, reqCriatividade: 0,
     niveis: [
     { nome: "Soldado", salario: 4400, experienciaNecessaria: 0},
     { nome: "Cabo", salario: 6400, experienciaNecessaria: 2},
@@ -331,7 +331,7 @@ const carreiras = {
 
     // criatividade
     "Chef de Cozinha": {
-    salarioBase: 1400, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 1400, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 0, reqCriatividade: 80,
     niveis: [
     { nome: "Auxiliar de Cozinha", salario: 1200, experienciaNecessaria: 0},
     { nome: "Faculdade de Gastronomia", salario: 1200, experienciaNecessaria: 1},
@@ -344,7 +344,7 @@ const carreiras = {
 
     // liderança
     "Piloto": {
-    salarioBase: 2500, reqInteligencia: 75, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 2500, reqInteligencia: 75, reqEscolaridade: 12, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 60, reqCriatividade: 0,
     niveis: [
     { nome: "Copiloto", salario: 2500, experienciaNecessaria: 3},
     { nome: "Piloto Comercial", salario: 6000, experienciaNecessaria: 4},
@@ -356,7 +356,7 @@ const carreiras = {
 
     // criatividade
     "Jogador de Futebol": {
-    salarioBase: 1000, reqInteligencia: 45, reqEscolaridade: 0, reqEscolaridadem: 0,
+    salarioBase: 1000, reqInteligencia: 45, reqEscolaridade: 0, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 0, reqCriatividade: 75,
     niveis: [
     { nome: "Jogador de Base", salario: 800, experienciaNecessaria: 0 },
     { nome: "Jogador Profissional", salario: 5000, experienciaNecessaria: 2},
@@ -367,7 +367,7 @@ const carreiras = {
 
     // comunicação
     "Youtuber": {
-    salarioBase: 800, reqInteligencia: 50, reqEscolaridade: 0, reqEscolaridadem: 0,
+    salarioBase: 800, reqInteligencia: 50, reqEscolaridade: 0, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 75, reqLideranca: 0, reqCriatividade: 70,
     niveis: [
     { nome: "Criador Iniciante", salario: 1000, experienciaNecessaria: 0 },
     { nome: "Criador Popular", salario: 3000, experienciaNecessaria: 2},
@@ -378,19 +378,19 @@ const carreiras = {
 
     // comunicação e liderança
     "Político": {
-    salarioBase: 2500, reqInteligencia: 70, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 2500, reqInteligencia: 70, reqEscolaridade: 12, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 80, reqLideranca: 75, reqCriatividade: 70,
     niveis: [
     { nome: "Vereador", salario: 3000, experienciaNecessaria: 0},
     { nome: "Deputado", salario: 10000, experienciaNecessaria: 10},
-    { nome: "Senador", salario: 20000, experienciaNecessaria: 15},
-    { nome: "Governador", salario: 35000, experienciaNecessaria: 25},
-    { nome: "Presidente", salario: 50000, experienciaNecessaria: 30}
+    { nome: "Senador", salario: 70000, experienciaNecessaria: 15},
+    { nome: "Governador", salario: 150000, experienciaNecessaria: 25},
+    { nome: "Presidente", salario: 500000, experienciaNecessaria: 30}
     ]
     },
 
     // liderança
     "Militar": {
-    salarioBase: 1500, reqInteligencia: 60, reqEscolaridadem: 12, reqEscolaridade: 0,
+    salarioBase: 1500, reqInteligencia: 60, reqEscolaridadem: 12, reqEscolaridade: 0,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 80, reqCriatividade: 0,
     niveis: [
     { nome: "Recruta", salario: 1200, experienciaNecessaria: 0 },
     { nome: "Cabo", salario: 2000, experienciaNecessaria: 2},
@@ -401,7 +401,7 @@ const carreiras = {
     },
     // criatividade
     "Cientista de Dados": {
-    salarioBase: 3500, reqInteligencia: 85, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 3500, reqInteligencia: 85, reqEscolaridade: 12, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 0, reqCriatividade: 60,
     niveis: [
     {nome: "Faculdade de Ciências de Dados", salario: 0, experienciaNecessaria: 0},
     { nome: "Analista de Dados", salario: 3000, experienciaNecessaria: 4},
@@ -414,7 +414,7 @@ const carreiras = {
 
     // criatividade
     "Farmaceutico":{
-    salarioBase: 4600, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 4600, reqInteligencia: 60, reqEscolaridade: 12, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 0, reqCriatividade: 65,
     niveis: [
     {nome: "Faculdade de Farmácia", salario: 0, experienciaNecessaria: 0},
     {nome: "Recém-formado", salario: 3000, experienciaNecessaria: 4},
@@ -427,7 +427,7 @@ const carreiras = {
 
     // liderança
     "Perito Criminal":{
-    salarioBase: 11000, reqInteligencia: 70, reqEscolaridade: 12, reqEscolaridadem: 0,
+    salarioBase: 11000, reqInteligencia: 70, reqEscolaridade: 12, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 60, reqCriatividade: 0,
     niveis: [
     {nome: "Auxiliar de Papiloscopista / Agente", salario: 4500, experienciaNecessaria: 2},
     {nome: "Investigador / Escrivão", salario: 5800, experienciaNecessaria: 4},
@@ -439,7 +439,7 @@ const carreiras = {
 
     // criatividade
     "Gamer":{
-    salarioBase: 750, reqInteligencia: 25, reqEscolaridade: 0, reqEscolaridadem: 0,
+    salarioBase: 750, reqInteligencia: 25, reqEscolaridade: 0, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 0, reqLideranca: 0, reqCriatividade: 70,
     niveis: [
     {nome: "Gamer Iniciante", salario: 50, experienciaNecessaria:0},
     {nome: "Gamer intermediário", salario: 500, experienciaNecessaria:2},
@@ -449,7 +449,7 @@ const carreiras = {
 
     // comunicação
     "Empacotador":{
-    salarioBase: 2000, reqInteligencia: 50, reqEscolaridade: 6, reqEscolaridadem: 0,
+    salarioBase: 2000, reqInteligencia: 50, reqEscolaridade: 6, reqEscolaridadem: 0,reqAparencia: 0, reqComunicacao: 25, reqLideranca: 0, reqCriatividade: 0,
     niveis: [
     {nome: "Nível I", salario: 1600, experienciaNecessaria: 0},
     {nome: "Nível II", salario: 2200, experienciaNecessaria: 2},
@@ -586,7 +586,7 @@ function atualizarBarra(id, valor) {
 ========================= */
 function passarAno() {
     if (!jogador.vivo) return;
-    jogador.idade+=1
+    jogador.idade+=18
     if (jogador.carreira !==null){
         if (jogador.inteligencia !==100){
             jogador.inteligencia+=5}
@@ -1228,19 +1228,22 @@ function relacoesAvancadas() {
 
         const bloco = document.createElement("div");
         bloco.className = "relacao";
-        bloco.innerHTML = `Atividades
-            <p><b>${r.nome}</b> (${r.tipo}) - Nível: ${r.nivel} ${r.idade !== undefined ? `(${r.idade} anos)` : ''}</p>
-            <button onclick="interagirAvancado(${index}, 'conversar')">Conversar</button>
-            <button onclick="interagirAvancado(${index}, 'sair')">Sair Juntos</button>
-            <button onclick="interagirAvancado(${index}, 'presente')">Dar Presente</button>
-            ${r.tipo === "Amizade" && jogador.idade >= 16 ? `<button onclick="tornarPaixao(${index})">Tornar Paixão</button>` : ""}
-            ${r.tipo === "Paixão" ? `<button onclick="interagirAvancado(${index}, 'flertar')">Flertar</button>` : ""}
-            ${r.tipo === "Paixão" && r.nivel >= 70 && !jogador.parceiro ? `<button onclick="pedirEmNamoro(${index})">Pedir em Namoro</button>` : ""}
-            ${r.tipo === "Namoro" && r.nivel >= 80 ? `<button onclick="casar(${index})">Casar</button>` : ""}
-            ${r.tipo === "Cônjuge" && r.nivel >= 60 && jogador.idade >= 18 ? `<button onclick="terFilho(${index})">Ter Filho</button>` : ""}
-            ${r.tipo === "Cônjuge" && r.nivel < 30 ? `<button onclick="divorciar(${index})">Divorciar</button>` : ""}
-            ${r.tipo === "Cônjuge" || r.tipo === "Namoro" ? `<button onclick="trairParceiro(${index})">Trair Parceiro</button>` : ''}
-        `;
+        if (r.idade >0 ) {
+            bloco.innerHTML = `Atividades
+                <p><b>${r.nome}</b> (${r.tipo}) - Nível: ${r.nivel} ${r.idade > 0 ? `(${r.idade} anos)` : ''}</p>
+                <button onclick="interagirAvancado(${index}, 'conversar')">Conversar</button>
+                <button onclick="interagirAvancado(${index}, 'sair')">Sair Juntos</button>
+                <button onclick="interagirAvancado(${index}, 'presente')">Dar Presente</button>
+                ${r.tipo === "Amizade" && jogador.idade >= 16 ? `<button onclick="tornarPaixao(${index})">Tornar Paixão</button>` : ""}
+                ${r.tipo === "Paixão" ? `<button onclick="interagirAvancado(${index}, 'flertar')">Flertar</button>` : ""}
+                ${r.tipo === "Paixão" && r.nivel >= 70 && !jogador.parceiro ? `<button onclick="pedirEmNamoro(${index})">Pedir em Namoro</button>` : ""}
+                ${r.tipo === "Namoro" && r.nivel >= 80 ? `<button onclick="casar(${index})">Casar</button>` : ""}
+                ${r.tipo === "Cônjuge" && r.nivel >= 60 && jogador.idade >= 18 ? `<button onclick="terFilho(${index})">Ter Filho</button>` : ""}
+                ${r.tipo === "Cônjuge" && r.nivel < 30 ? `<button onclick="divorciar(${index})">Divorciar</button>` : ""}
+                ${r.tipo === "Cônjuge" || r.tipo === "Namoro" ? `<button onclick="trairParceiro(${index})">Trair Parceiro</button>` : ''}
+            `;
+        
+        }
         div.appendChild(bloco);
     });
 
@@ -1605,7 +1608,7 @@ function carreira() {
             <h3>Escolha sua carreira:</h3>
             ${Object.keys(carreiras).map(c => {
                 const info = carreiras[c];
-                return `<button onclick="escolherCarreira('${c}')" class="carreirabt">${c}<br> (Int.: ${info.reqInteligencia}, Esc.: ${info.reqEscolaridade}, Esc.M.: ${info.reqEscolaridadem})</button><br>`;
+                return `<button onclick="escolherCarreira('${c}')" class="carreirabt">${c}<br> (Int.: ${info.reqInteligencia}, Esc.: ${info.reqEscolaridade}, Esc.M.: ${info.reqEscolaridadem})<br> (Aparencia.: ${info.reqAparencia}, Comunicação.: ${info.reqComunicacao}, Liderança.: ${info.reqLideranca}, Criatividade.: ${info.reqCriatividade})</button><br>`;
             }).join('')}
         `;
     } else if (!jogador.carreira) {
@@ -1658,6 +1661,22 @@ function escolherCarreira(nomeCarreira) {
 
     if (jogador.escolaridadem < info.reqEscolaridadem) {
         alert(`Sua escolaridade Militar (${jogador.escolaridadem}) é muito baixa para ser ${nomeCarreira} (requer ${info.reqEscolaridadem}).`);
+        return;
+    }
+    if (jogador.aparencia < info.reqAparencia){
+        alert(`Sua aparencia (${jogador.aparencia}) é muito baixa para ser ${nomeCarreira} (requer ${info.reqAparencia}).`);
+        return;
+    }
+    if (jogador.habilidades.comunicacao < info.reqComunicacao){
+        alert(`Sua comunicação (${jogador.habilidades.comunicacao}) é muito baixa para ser ${nomeCarreira} (requer ${info.reqComunicacao}).`);
+        return;
+    }
+    if (jogador.habilidades.lideranca < info.reqLideranca){
+        alert(`Sua liderança (${jogador.habilidades.lideranca}) é muito baixa para ser ${nomeCarreira} (requer ${info.reqLideranca}).`);
+        return;
+    }
+    if (jogador.habilidades.criatividade < info.reqCriatividade){
+        alert(`Sua criatividade (${jogador.habilidades.criatividade}) é muito baixa para ser ${nomeCarreira} (requer ${info.reqCriatividade}).`);
         return;
     }
 
@@ -1782,7 +1801,7 @@ function atividades() {
         document.getElementById("carreira").classList.add("hidden");
 
         div.innerHTML += `
-            <button onclick="atividadeAcademia()">Ir à academia (Saúde +10, Felicidade +2)</button>
+            <button onclick="atividadeAcademia()">Ir à academia (Saúde +10, Felicidade +2, Aparencia +1 R$1000 se for maior de idade)</button>
             <button onclick="atividadeViajar()">Viajar (R$1000, Felicidade +15)</button>
             <button onclick="atividadeHobby()">Praticar hobby (Felicidade +8)</button>
             <button onclick="atividadeMedico()">Ir ao medico (R$1000 se for maior de idade, saude +10)
@@ -1853,14 +1872,28 @@ function deletarSave() {
 
 function atividadeAcademia() {
     if (jogador.idade >= 14) {
-        jogador.saude = Math.min(100, jogador.saude + 10);
-        jogador.felicidade = Math.min(100, jogador.felicidade + 2);
-        alert("Você foi à academia e melhorou sua saúde!");
-    }else {
-        alert("Você precisa ter 14 anos para ir à academia.")
+        if (jogador.idade >= 18) {
+            if (jogador.dinheiro >= 1000) {
+                jogador.dinheiro -= 1000
+                jogador.saude = Math.min(100, jogador.saude + 10);
+                jogador.felicidade = Math.min(100, jogador.felicidade + 2);
+                jogador.aparencia = Math.min(100, jogador.aparencia + 1);
+                alert("Você foi à academia e melhorou sua saúde e sua aparência!");
+            } else {
+                alert("Você não tem dinheiro suficiente.");
+            }
+        } else {
+            jogador.saude = Math.min(100, jogador.saude + 10);
+            jogador.felicidade = Math.min(100, jogador.felicidade + 2);
+            jogador.aparencia = Math.min(100, jogador.aparencia + 1);
+            alert("Seus pais pagaram a academia e você foi à academia e melhorou sua saúde e sua aparência!");
+        }
+    } else {
+        alert("Você precisa ter 14 anos para ir à academia.");
     }
-    atualizarStatus();
+    atualizarStatus(); 
 }
+
 
 function atividadeEstudar() {
     if (jogador.idade >= 6){
@@ -2158,7 +2191,6 @@ function comprarMelhoria() {
             nome: "Plástica Facial", 
             preco: 30000, 
             efeitos: { aparencia: 20, felicidade: 10 }, 
-            condicao: () => jogador.aparencia < 80 
         },
         { 
             nome: "Livros de Estudo", 
@@ -2275,3 +2307,120 @@ function comprarMelhoria() {
         alert("Dinheiro insuficiente!");
     }
 }
+
+// =====================
+// Funções de Cookie
+// =====================
+function setCookie(nome, valor, dias) {
+    const expira = new Date();
+    expira.setTime(expira.getTime() + (dias * 24 * 60 * 60 * 1000));
+    document.cookie = `${nome}=${valor}; expires=${expira.toUTCString()}; path=/`;
+}
+
+function getCookie(nome) {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        const [n, v] = cookie.trim().split('=');
+        if (n === nome) return v;
+    }
+    return null;
+}
+
+// =====================
+// Funções de Tema
+// =====================
+function aplicarTemaDark() {
+    document.body.style.backgroundImage = "url('darkbg.jpg')";
+
+    document.querySelectorAll('.container').forEach(c => {
+        c.style.background = 'rgba(0, 0, 0, 0.5)';
+    });
+
+    document.querySelectorAll('p, h1, h2, h3, h4, h5, h6').forEach(t => {
+        t.style.color = 'rgba(0, 0, 0, 1)';
+    });
+
+    const estatisticas = document.querySelector('#estatisticas');
+    if (estatisticas) {
+        estatisticas.style.background = 'rgba(0, 0, 0, 0.1)';
+        estatisticas.style.border = '1px solid #000000ff';
+    }
+
+    document.querySelectorAll('input, select, textarea').forEach(el => {
+        el.style.border = '1px solid #000000ff';
+        el.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        el.style.color = '#000000ff';
+    });
+}
+
+function aplicarTemaLight() {
+    document.body.style.backgroundImage = "url('lightbg.jpg')";
+
+    document.querySelectorAll('.container').forEach(c => {
+        c.style.background = 'rgba(0, 0, 0, 0.5)';
+    });
+
+    document.querySelectorAll('p, h1, h2, h3, h4, h5, h6').forEach(t => {
+        t.style.color = 'rgba(255, 255, 255, 1)';
+    });
+
+    const estatisticas = document.querySelector('#estatisticas');
+    if (estatisticas) {
+        estatisticas.style.background = 'rgba(0, 0, 0, 0.1)';
+        estatisticas.style.border = '1px solid #000000ff';
+    }
+
+    document.querySelectorAll('input, select, textarea').forEach(el => {
+        el.style.border = '1px solid #000000ff';
+        el.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        el.style.color = '#000000ff';
+    });
+}
+
+// =====================
+// Atualiza texto do botão
+// =====================
+function atualizarTextoBotao() {
+    const botao = document.getElementById("theme-toggle");
+    const tema = document.body.getAttribute("data-theme");
+
+    botao.textContent = tema === "light" ? "🌙 Modo Escuro" : "☀️ Modo Claro";
+}
+
+// =====================
+// Aplica tema baseado no atributo
+// =====================
+function aplicarTema(tema) {
+    if (tema === "light") {
+        aplicarTemaLight();
+    } else {
+        aplicarTemaDark();
+    }
+    document.body.setAttribute("data-theme", tema);
+    atualizarTextoBotao();
+}
+
+// =====================
+// Quando a página carrega
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+    let tema = getCookie("tema");
+
+    if (!tema) {
+        tema = "dark";
+        setCookie("tema", "dark", 365);
+    }
+
+    aplicarTema(tema);
+});
+
+// =====================
+// Botão troca tema
+// =====================
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    const temaAtual = document.body.getAttribute("data-theme");
+    const novoTema = temaAtual === "light" ? "dark" : "light";
+
+    aplicarTema(novoTema);
+    setCookie("tema", novoTema, 365);
+});
