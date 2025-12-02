@@ -1,6 +1,7 @@
 body {
     /* Fundo da página */
-    background-color: #12002e; /* Roxo muito escuro, quase preto */
+    background-image: url(loginbg.jpg);
+    background-size: cover;
     color: #e0e0e0; /* Cinza claro para o texto */
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -12,14 +13,14 @@ body {
 
 h2 {
     /* Cor do título */
-    color: #bb86fc; /* Roxo vibrante para destaque */
+    color: #d6bcf5; 
     text-align: center;
     margin-bottom: 30px;
 }
 
 #formLogin {
     /* Contêiner principal do formulário */
-    background-color: #2c005b; /* Roxo escuro para o fundo do formulário */
+    background-color: transparent; 
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
@@ -44,10 +45,10 @@ input[type="date"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #5a189a; /* Borda roxa de contraste */
+    border: 1px solid black; /* Borda roxa de contraste */
     border-radius: 6px;
     box-sizing: border-box;
-    background-color: #3c007a; /* Roxo um pouco mais claro para o campo */
+    background-color: transparent; /* Roxo um pouco mais claro para o campo */
     color: #e0e0e0; /* Texto do campo em cinza claro */
     transition: border-color 0.3s;
 }
@@ -80,10 +81,8 @@ button[type="submit"]:hover {
     transform: translateY(-2px);
 }
 
-/* A classe 'erro' já está definida no seu <style> interno,
-   mas aqui está para referência e caso queira estilizar mais: */
 .erro {
-    color: #ff6b6b !important; /* Vermelho claro para o erro, garantindo visibilidade */
+    color: #ff6b6b !important; 
     font-weight: bold;
     text-align: center;
 }
