@@ -2337,7 +2337,7 @@ function aplicarTemaDark() {
     });
 
     document.querySelectorAll('p, h1, h2, h3, h4, h5, h6').forEach(t => {
-        t.style.color = 'rgba(0, 0, 0, 1)';
+        t.style.color = 'rgb(214, 214, 214)';
     });
 
     const estatisticas = document.querySelector('#estatisticas');
@@ -2348,7 +2348,7 @@ function aplicarTemaDark() {
 
     document.querySelectorAll('input, select, textarea').forEach(el => {
         el.style.border = '1px solid #000000ff';
-        el.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        el.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
         el.style.color = '#000000ff';
     });
 }
@@ -2372,8 +2372,8 @@ function aplicarTemaLight() {
 
     document.querySelectorAll('input, select, textarea').forEach(el => {
         el.style.border = '1px solid #000000ff';
-        el.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-        el.style.color = '#000000ff';
+        el.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+        el.style.color = 'rgba(255, 255, 255, 1)';
     });
 }
 
