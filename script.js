@@ -586,7 +586,7 @@ function atualizarBarra(id, valor) {
 ========================= */
 function passarAno() {
     if (!jogador.vivo) return;
-    jogador.idade+=18
+    jogador.idade+=1
     if (jogador.carreira !==null){
         if (jogador.inteligencia !==100){
             jogador.inteligencia+=5}
